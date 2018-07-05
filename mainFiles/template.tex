@@ -1,0 +1,79 @@
+\documentclass[%
+  12pt,
+  a4paper %,   fleqn 
+  ]{report}
+
+\usepackage{geometry}
+ \geometry{
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm
+ }
+
+\usepackage[T1]{fontenc}
+\usepackage[english,ngerman]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{makeidx}\makeindex
+\usepackage{nicefrac}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{verbatim}
+\usepackage{alltt}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+% \usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor % has conflict
+\usepackage{colortbl}% http://ctan.org/pkg/xcolor
+\usepackage{changepage} 
+\usepackage{titlesec}
+
+\usepackage[colorlinks,plainpages=false,pdfpagelabels,breaklinks=true]{hyperref}
+\hypersetup{%
+  pdftitle={MATLAB in Naturwissenschaft und Technik},
+  pdfauthor={Winfried Kernbichler, TU Graz},
+  urlcolor={blue},
+  linkcolor={black}
+}
+
+% \setlength{\parsep}{1ex plus0.5ex minus0.5ex}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0.5\baselineskip}%
+
+
+\usepackage{listings}
+\lstloadlanguages{Matlab}
+% \lstdefinelanguage{Matlab} {}
+
+\lstset{% general command to set parameter(s)
+language=Matlab,
+morekeywords={isnumeric,ndims,copyfile,movefie,fullfile,fileparts,run,
+        isscalar,mod,isstr,persistent,integral,numel,ischar,isrow,factorial,
+        warning,lastwarn,ones,zeros,int32,cast,true,false,isequal,isequaln,
+        nan,randi,var,isbanded,blkdiag,cumtrapz,switch,case,otherwise},
+basicstyle=\ttfamily, % \small,
+identifierstyle=\ttfamily,
+keywordstyle=\color{blue}, %\ttfamily, %\bfseries,
+stringstyle=\ttfamily,
+commentstyle=\ttfamily,
+frame=none, %single, % none, leftline, topline, bottomline, lines (top and bottom), single, shadowbox
+xleftmargin=0em,
+aboveskip=0ex,
+belowskip=2ex,
+tabsize=4,
+} % print whole listing small
+
+
+
+
+\title{+TITLE+}
+\author{+AUTHOR+}
+\date{+DATE+}
+
+
+\begin{document}
+
++CONTENT+
+
+\end{document}

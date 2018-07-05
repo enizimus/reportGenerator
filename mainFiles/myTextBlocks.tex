@@ -1,0 +1,48 @@
+%% INTRODUCTION
+This document describes the usage of the MATLAB class {\tt latexGenerator}.
+It is based on the super class {\tt reportGenerator}. Another availbale sub class
+is {\tt markdownGenerator} which instead of Latex produces output for the
+Markdown language.
+
+This file is produced by the MATLAB File {\tt testLatexGenerator}.
+Necessary files are:
+
+\begin{description}
+\item[{\tt setting.dat}] Specifies a variaty of settings for the program.
+
+You will have to modify {\tt outputGenerator} and {\tt outputViewer} which 
+in our example are specified for the operating system of the Mac.
+
+\item[{\tt template.tex}] A template file for the Latex environment
+
+Make sure you have Latex installed on your system and that it is accessible 
+through MATLAB. It might be necessary to modify your file {\tt startup.m} 
+to allow MATLAB to run Latex programs.
+
+\item[{\tt myTextBlocks.tex}] A file which contains blocks of Latex code 
+separated by lines with {\tt \%\% TAG} where {\tt TAG} is a unique identifier.
+
+It can be used to include Latex code into the document. Please see at the 
+end of this chapter how the text of this introduction is included into the document.
+
+\item[{\tt myCodeBlocks.m}] A file which contains blocks of MATLAB code 
+separated by lines with {\tt \%\% TAG} where {\tt TAG} is a unique identifier.
+
+It can be used to evaluate code specified in a section of this file. 
+
+\item[{\tt myMatlabInit.m}] This is a init-File for MATLAB which is executed 
+at the beginning. One can specify all necessarey settings there.
+
+\end{description}
+
+%% LIST
+Here it is shown how the three Latex environments for lists can be
+specified within MATLAB code.
+
+Of course one does not have to do this because a list environment 
+(as any Latex code) can be imported from text blocks (see e.g. Introduction).
+
+%% TEXT2
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 

@@ -1,0 +1,49 @@
+outputGenerator      :: mmd2html 
+outputViewer         :: open -a Safari
+outputFile           :: test
+outputFormat         :: mmd
+mediaDir             :: MediaFiles
+mediaFormat          :: png
+mediaPrefix          :: picture_
+reportFormat         :: html
+templateFile         :: template
+textBlockFile        :: myTextBlocks
+codeBlockFile        :: myCodeBlocks
+matlabInitFile       :: myMatlabInit
+blockSeparator       :: %%
+author               :: Winfried Kernbichler
+title                :: Test Document for Report Generator
+date                 :: \today
+dispLatexCode        :: 0
+shiftTextUnit        :: 4
+shiftText            :: 1
+separateText         :: 2
+listingBasicStyle    ::
+listingOutputStyle   :: 
+imagePerLine         :: 2
+imageOption          :: align: middle; width: 600; 
+figureOption         :: border: 1px solid gray; display: inline-block; margin: 2px; padding: 2px; text-align: center;
+figurePlacement      :: ht
+arrayImageColor      :: 0
+arrayColorbar        :: 1
+trimImage            :: 0
+trimImageCommand     :: /usr/local/bin/convert #FILE# -trim #FILE#
+borderImage          :: 0
+borderImageCommand   :: /usr/local/bin/convert #FILE# -bordercolor "rgb(255,255,255)" -border 30x30 #FILE#
+prettyComMax         :: short   :: bank,2, short,4, inter,8 long, 15
+prettyMaxSize        :: [nan,nan]
+prettyMaxShow        :: 300
+prettyMaxShowFac     :: 3
+prettyMinShow        :: 3
+latexOutputColor     :: 
+tablePlacement       :: ht     :: for table
+transposeTable       :: 0
+dataFormatMode       :: column   :: column, row
+dataFormat           :: %.4f
+dataNanString        :: -      :: nan
+tableColumnAlignment :: c ::
+tableBorders         :: 1
+booktabs             :: 0 
+centerTabular        :: 1
+tableColLabels       :: 
+tableRowLabels       :: 

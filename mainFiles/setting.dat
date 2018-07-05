@@ -1,0 +1,49 @@
+outputGenerator      :: latexmk -pdf -f -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" 
+outputViewer         :: start test.pdf
+outputFile           :: test
+outputFormat         :: tex
+mediaDir             :: MediaFiles
+mediaFormat          :: png
+mediaPrefix          :: picture_
+reportFormat         :: pdf
+templateFile         :: template
+textBlockFile        :: myTextBlocks
+codeBlockFile        :: myCodeBlocks
+matlabInitFile       :: myMatlabInit
+blockSeparator       :: %%
+author               :: Eniz Museljic
+title                :: Usage of MATLAB Report Generator
+date                 :: \today
+dispLatexCode        :: 0
+shiftTextUnit        :: 4
+shiftText            :: 1
+separateText         :: 2
+listingBasicStyle    ::
+listingOutputStyle   :: 
+imagePerLine         :: 2
+imageOption          :: width=0.45\textwidth
+figureOption         :: 
+figurePlacement      :: ht
+arrayImageColor      :: 0
+arrayColorbar        :: 1
+trimImage            :: 0
+trimImageCommand     :: /usr/local/bin/convert #FILE# -trim #FILE#
+borderImage          :: 0
+borderImageCommand   :: /usr/local/bin/convert #FILE# -bordercolor "rgb(255,255,255)" -border 30x30 #FILE#
+prettyComMax         :: short   :: bank,2, short,4, inter,8 long, 15
+prettyMaxSize        :: [nan,nan]
+prettyMaxShow        :: 300
+prettyMaxShowFac     :: 3
+prettyMinShow        :: 3
+latexOutputColor     :: red
+tablePlacement       :: ht     :: for table
+transposeTable       :: 0
+dataFormatMode       :: column   :: column, row
+dataFormat           :: %.4f
+dataNanString        :: -      :: nan
+tableColumnAlignment :: c ::
+tableBorders         :: 1
+booktabs             :: 0 
+centerTabular        :: 1
+tableColLabels       :: 
+tableRowLabels       :: 
