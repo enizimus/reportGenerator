@@ -285,7 +285,7 @@ classdef latexGenerator < reportGenerator
             obj.dispLatexCode([{['% Table with label: ',label]},{'%'},text])
          end % addTable
          
-         function addEquation(obj, eqn, option)
+         function varargout = addEquation(obj, eqn, option)
         % addEquation(obj, eqn)
         %
         % param : 
@@ -301,23 +301,13 @@ classdef latexGenerator < reportGenerator
         switch option 
             case 'equation'
                 cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
-            case 'enumerate'
-                option = 'equation*';
-                cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
-            case 'align'
-                cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
+                cend = strrep(cend, 'TEXTÄ
+                obj.addParagraph(
+         obj.addParagraph();
+        
          end
     end
     
-    end
+    
     
 end
