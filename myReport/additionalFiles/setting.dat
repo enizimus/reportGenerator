@@ -1,14 +1,14 @@
 outputGenerator      :: latexmk -pdf -f -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" 
-outputViewer         :: start test.pdf
-outputFile           :: test
+outputViewer         :: start reportingDocu.pdf
+outputFile           :: reportingDocu
 outputFormat         :: tex
 mediaDir             :: MediaFiles
 mediaFormat          :: png
 mediaPrefix          :: picture_
 reportFormat         :: pdf
 templateFile         :: template
-textBlockFile        :: myTextBlocks
-codeBlockFile        :: myCodeBlocks
+textBlockFile        :: textFile
+codeBlockFile        :: myMatlabBlocks
 matlabInitFile       :: myMatlabInit
 blockSeparator       :: %%
 author               :: Eniz Museljic
@@ -39,7 +39,7 @@ latexOutputColor     :: red
 tablePlacement       :: ht     :: for table
 transposeTable       :: 0
 dataFormatMode       :: column   :: column, row
-dataFormat           :: %.4f
+dataFormat           :: %i
 dataNanString        :: -      :: nan
 tableColumnAlignment :: c ::
 tableBorders         :: 1

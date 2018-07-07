@@ -1,4 +1,0 @@
-\babel@toc {ngerman}{}
-\contentsline {chapter}{\numberline {1}First Chapter}{2}{chapter.1}
-\contentsline {section}{\numberline {1.1}First Section}{2}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}First subsection}{2}{subsection.1.1.1}

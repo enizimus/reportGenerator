@@ -1,6 +1,6 @@
 outputGenerator      :: latexmk -pdf -f -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" 
-outputViewer         :: start test.pdf
-outputFile           :: test
+outputViewer         :: start hello_world.pdf
+outputFile           :: hello_world
 outputFormat         :: tex
 mediaDir             :: MediaFiles
 mediaFormat          :: png

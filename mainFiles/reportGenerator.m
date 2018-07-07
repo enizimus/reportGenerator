@@ -368,7 +368,7 @@ classdef reportGenerator < handle
             if nargin < 4 || isempty(shiftAmount), shiftAmount = 1; end
 
             code    = obj.wrapInCell(code);
-            actions = obj.wrapInCell(actions);
+            actions = obj.wrapInCell(actions);  
             
             if exist(code{1},'file')
                 code = obj.readFile(code{1}); 

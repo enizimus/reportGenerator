@@ -37,12 +37,16 @@ classdef latexGenerator < reportGenerator
             % cleans the working directory from all files except the .pdf
             
             extList = {'aux','fls','db_latexmk','idx','ilg','ind','log',...
-                        'out','gz','fdb_latexmk','tex'};
+                        'out','gz','fdb_latexmk','tex','toc'};
             for k = 1:numel(extList)
                 ext = extList{k};
                 delete(['*.',ext])
             end
         end % cleanDir
+        
+        function addNewPage(obj)
+            obj.addParagraph('\newpage');
+        end
         
         function addTitlePage(obj)
             % addTitlePage 
@@ -296,27 +300,37 @@ classdef latexGenerator < reportGenerator
         %
         cbeg = '\begin{TEXT}';
         cend = '\end{TEXT}';
-        if(nargin < 3 || isempty(option)), option = 'equation'; end
+        eqnSep = obj.get('equationNewLine');
+        if(nargin < 3 || isempty(option)), option = 'equation*'; end
         
-        switch option 
-            case 'equation'
-                cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
-            case 'enumerate'
-                option = 'equation*';
-                cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
-            case 'align'
-                cbeg = strrep(cbeg, 'TEXT', option);
-                cend = strrep(cend, 'TEXT', option);
-                text = [cbeg, eqn, cend];
-                obj.addParagraph(text);
+        eqn = obj.wrapInCell(eqn);
+        
+        cbeg = strrep(cbeg, 'TEXT', option);
+        cend = strrep(cend, 'TEXT', option);
+        obj.packageEquation(eqn, cbeg, cend, eqnSep);
          end
-    end
+         
+         function packageEquation(obj, eqn, cbeg, cend, eqnSep)
+             % packageEquation(obj, eqn, cbeg, cend, eqnSep)
+             %
+             % Helper function for the addEquation(...) function 
+             %
+             text = cbeg;
+             for i=1:numel(eqn)
+                 text = [text, eqn(i), eqnSep];
+             end
+             text = [text, cend];
+             obj.addParagraph(text);
+         end
+         
+         function addTitleLogo(obj)
+             code = ['\vspace*{\dimexpr-1in-\topmargin-\headsep-\headheight-\baselineskip}%'...
+                     '\hspace*{\dimexpr-1in-\evensidemargin-\parindent}%'...
+                     '\makebox[\paperwidth][r]{\includegraphics[height=3 cm]{Infineon.jpg}}'];
+                 
+             obj.addParagraph(code);
+             
+         end
     
     end
     

@@ -1,0 +1,129 @@
+%% ABOUT
+
+This toolset is to be used while programming in MATLAB to create a report or paper of any
+kind with the data from MATLAB, so it bridges the way and saves you the time to coppy
+values and make pretty tables and plots through an additional LaTeX editor. Please follow the
+upcoming instructions to get it up and running.
+
+%% SETUP1
+
+To set the LaTeX Generator up, you will need the following installed on your pc :
+
+%% SETUP2
+
+After installing these components, copy the reportGenerator main folder to a secure location
+on your machine and be sure to add it to your MATLABs search path so you can work from
+a different directory and use all the functions without restriction. To be sure that everything
+is set up correctly, we have provided a very simple "hello world" programme that you can run
+and check if it generates a pdf document with "hello world" on one page, in your current working
+directory.
+
+%% HOWIW
+
+In this section we will talk about all the different files that you can use and manipulate to 
+get the best out of this toolset. The main files that you are gonna be changing are :
+
+\begin{description}
+\item[{\tt setting.dat}] Specifies a variaty of settings for the program which can be adjusted 
+to your specific needs.
+\item{{\tt myTextBlocks.tex}} A file which contains blocks of Latex code 
+separated by lines with {\tt \%\% TAG} where {\tt TAG} is a unique identifier.
+\item[{\tt myCodeBlocks.m}] A file which contains blocks of MATLAB code 
+separated by lines with {\tt \%\% TAG} where {\tt TAG} is a unique identifier.
+It can be used to evaluate code specified in a section of this file.
+\item[{\tt myMatlabInit.m}] This is a init-File for MATLAB which is executed 
+at the beginning. One can specify all necessarey settings there.
+\end{description}
+
+You can also specify files with different names for organisation purposes, if that's the case
+you will have to change the file names in the {\tt setting.dat} file.
+Additionally you will need to edit the provided MATLAB {\tt startup.m} file and set the \LaTeX{} 
+install path to the path on your computer.
+
+
+
+%% TEXINTRO
+
+Now we will go through the functions available and show you what you can do with them, you can
+use this documentation and the MATLAB file {\tt reportingDocu.m} with which it was created, to 
+help you write your own reports. All of the functions that will be mentioned also have 
+descriptions which can be accessed through MATLAB by using the $help$ command fot the function
+in question.
+
+%% NEWREPORT1
+
+To use the following functions you will need to create a $latexGenerator$ object which will be used
+to access the methods provided and explained in the following sections. This can be easily done with:
+
+%% NEWREPORT2
+
+Note that the constructor function also takes in parameters with which we could like in the following example 
+change the name of the settings file we are using, this can be very useful if we have a settings file with 
+settings that fit our current needs but we might use a different settings file usually.
+
+
+%% SETGET1
+
+Using the $set$ and $get$ methods from the reportGenerator super class, we can access and change the
+settings provided by the {\tt setting.dat} file from withing our MATLAB code. For example, if we wanted 
+to change the name the program gives to the graphics it saves, we could use the following code : 
+
+%% SETGET2
+
+With this piece of code we set the name prefix of the plots that are being saved to 'plot\_'. 
+It can be utilyzed to set and get, with the get function, all of the parameters in {\tt setting.dat}.
+
+%% TITLETOC
+
+Like in the most cases we would want to add a title page to our document, we will do this in the following
+lines of code. The title, author and date will be displayed with the corresponding settings from the 
+setting file. We can also add a table of contents.
+
+%% PARAGRAPH
+
+All of these paragraphs in this documentation were added using the paragraph function, you can choose if you
+want to add the paragraph by writing it whole as a string in MATLAB and passing it to the function or using
+the {\tt myTextBlocks.tex} file from which we can import any latex code or text and use it in our documents 
+just by passing the {\tt TAG} to the paragraph function. 
+An example for adding a short sentence would be : 
+
+%% HEADINGS
+
+Using one of these heading types we can structure our document much better and provide a better overview, since
+without them, the table of contents would be useless. The following code was used to create the heading for this
+current section in this document :
+
+%% LISTSENV
+
+We can see that it is fairly easy and quick to add a MATLAB cell array of strings and make a pretty list in 
+your document. The following examples show that nested lists are also possible, the code that was used to make these 
+can be found in the {\tt reportDocu.m} file under LISTS. 
+
+%% TABTAB
+
+Tables can be created directly from MATLAB arrays, following example shows a simple table containing the values 
+from an array with random values. The following code was executed.
+
+%% TABTAB2
+
+All of the settings for the tables can be adjusted in the {\tt setting.dat} file or through the {\tt set} 
+function as we will see in this section. Now we will demonstrate how to lable the rows and columns. We will
+do that by specifying the row and/or column labels as strings with collon separated labels as we can se in 
+the following code. 
+
+%%  TABTAB3
+
+The following example shows that we can also pass data with Not a Number fields, the corresponding parameter 
+in the {\tt setting.dat} file has to be set appropriate, by default it is set to {\tt nan}. We will also demonstrate 
+how {\tt booktabs} and {\tt formating} for a new table.
+
+
+
+
+
+
+
+
+
+
+
