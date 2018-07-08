@@ -77,6 +77,42 @@ report.set('transposeTable',1);
 report.addTable(T, 'My caption');
 
 
+%% FIGFUN
+
+figh = gobjects(1,3);
+t = linspace(-2*pi,2*pi,100);
+
+figh(1) = figure('visible','off');
+plot(t,sin(t));
+xlim([-2*pi,2*pi])
+
+figh(2) = figure('visible','off');
+plot(t,log(t), 'mo');
+xlim([-2*pi,2*pi])
+
+figh(3) = figure('visible','off');
+plot(t,sinc(t), 'r-*');
+xlim([-2*pi,2*pi])
+
+%% FIGFUN2
+
+report.set('imagePerLine',2);
+report.addImage(figh(2:3));
+
+
+%% FIGFUN3
+report.set('imagePerLine',3);
+report.set('imageOption', 'width=0.30\textwidth');
+report.addFigure(figh, 'sin(t), log(t), sinc(t)');
+
+%% FIGFUN4
+report.set('imagePerLine',1);
+report.set('imageOption', 'width=0.8\textwidth');
+report.addFigure(figh, {'sin(t)', 'log(t)', 'sinc(t)'});
+
+
+
+
 
 
 

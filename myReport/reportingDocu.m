@@ -115,6 +115,23 @@ report.addMatlab('TABFUN6', {'listing', 'eval'});
 report.addParagraph('TABTAB51');
 report.addMatlab('TABFUN7',{'listing', 'eval'});
 
+% FIGURES --------------------------------------------
+
+report.setDefault('image');
+report.addHeading('section', 'Images and Figures');
+report.addParagraph('FIGS');
+report.addMatlab('FIGFUN', {'listing', 'eval'});
+report.addParagraph('FIGS2');
+report.addMatlab('report.addImage(figh(1));', {'listing', 'eval'});
+report.addParagraph('FIGS3');
+report.addMatlab('FIGFUN2', {'listing', 'eval'});
+report.setDefault('image');
+report.addMatlab('FIGFUN3', {'listing', 'eval'});
+report.addParagraph('FIGS4');
+report.addMatlab('FIGFUN4', {'listing', 'eval'});
+report.addParagraph('\clearpage')
+report.addParagraph('FIGS5');
+
 % MATLAB ---------------------------------------------
 
 

@@ -144,6 +144,34 @@ here, without any restriction. Next we will see the same MATLAB table added to o
 function which allows us also to add a caption for the table. We can also see the usage of the {\tt transposeTable} setting
 which can also be applied to the former way of adding tables.
 
+%% FIGS
+
+To add figures to our document we have two functions at our disposal, {\tt addImage} and {\tt addFigure}. These functions work
+with figure handles. The following code was used to generate the figures which handles we are going to use to add them into 
+our document.
+
+%% FIGS2
+
+You can set the visibility of the figures off so it doesn't show them in MATLAB, like we did in the example above. Using the 
+next line of code we added the first figure to our document.
+
+%% FIGS3
+
+As we have seen in the previous sections, it is also possible to edit settings for the figures and images we are adding with
+the {\tt set} function. Next we will demonstrate how to add multiple figures in one line, because it is possible to pass an 
+figure array to the {\tt addImage} function.
+
+%% FIGS4
+
+So we can see that by playing with the settings we can place the figures the way we want them. If we want to have bigger 
+figures we can also add them in a vertical positioning.
+
+%% FIGS5
+
+With the above example we demonstrated how to add multiple figures, one per line, with different captions. You can adjust
+the size of the figures by accessing the {\tt imageOption} property and setting the size as in the code above. In this case it
+is important to set the numbe of images per line to one or else it won't place them in the manner above.
+
 
 
 

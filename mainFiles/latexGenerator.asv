@@ -202,8 +202,8 @@ classdef latexGenerator < reportGenerator
             % Adds the figures that were passed through the figure handles
             % with the caption and label associated with them.
             %
-        
-            figPerLine = str2num(obj.get('imagePerLine'));
+            
+            
             count = num2str(obj.increaseCounter('figure'));
             if nargin<4 || isempty(label), 
                 label = ['fig:',count];
@@ -214,29 +214,22 @@ classdef latexGenerator < reportGenerator
             obj.set('dispLatexCode',0);
             imageText = obj.addImage(figHandles);
             obj.set('dispLatexCode',storeDisp);
-            nfigs = numel(figHandles);
+            nfigs = nume(figHandles);
             
-            
-            if nfigs > 1 && figPerLine == 1
+            if nfigs > 1 
                 caption = obj.wrapInCell(caption);
-                caption = obj.repeatString(caption, nfigs);
-                
-                for i = 1:nfigs
-                    cap = obj.wrapOutCell(caption(i));
-                    obj.addFigure(figHandles(i),cap);
-                end
-            else
-                text = [{['\begin{figure}[',figurePlacement,']']}, ...
-                    imageText];
-                if ~isempty(caption)
-                    text = [text,{['\caption{',caption,'}']}];
-                end
-                text = [text,{['\label{',label,'}']}];
-                text = [text,{['\end{figure}']}];
-                obj.addText(text);
-                if nargout>0, varargout{1} = text; end
-                obj.dispLatexCode([{['% Figure with label: ',label]},{'%'},text])
+                caption = obj.repeatCaption(caption, numel
+                    
+            text = [{['\begin{figure}[',figurePlacement,']']}, ...
+                imageText];
+            if ~isempty(caption)
+                text = [text,{['\caption{',caption,'}']}];
             end
+            text = [text,{['\label{',label,'}']}];
+            text = [text,{['\end{figure}']}];
+            obj.addText(text);
+            if nargout>0, varargout{1} = text; end
+            obj.dispLatexCode([{['% Figure with label: ',label]},{'%'},text])
         end % addFigure
         
         function varargout = addTabular(obj,myTable)

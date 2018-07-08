@@ -115,6 +115,15 @@ report.addMatlab('TABFUN6', {'listing', 'eval'});
 report.addParagraph('TABTAB51');
 report.addMatlab('TABFUN7',{'listing', 'eval'});
 
+% FIGURES --------------------------------------------
+
+report.addHeading('section', 'Images and Figures');
+report.addParagraph('FIGS');
+
+
+
+
+
 % MATLAB ---------------------------------------------
 
 

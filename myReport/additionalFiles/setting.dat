@@ -20,7 +20,7 @@ shiftText            :: 1
 separateText         :: 2
 listingBasicStyle    ::
 listingOutputStyle   :: 
-imagePerLine         :: 2
+imagePerLine         :: 1
 imageOption          :: width=0.45\textwidth
 figureOption         :: 
 figurePlacement      :: ht
