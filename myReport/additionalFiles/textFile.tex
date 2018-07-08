@@ -115,11 +115,34 @@ the following code.
 
 The following example shows that we can also pass data with Not a Number fields, the corresponding parameter 
 in the {\tt setting.dat} file has to be set appropriate, by default it is set to {\tt nan}. We will also demonstrate 
-how {\tt booktabs} and {\tt formating} for a new table.
+what {\tt booktabs} and {\tt formating} do for a new table.
 
 
+%% TABTAB4
 
+In the following examples we will see some other possible adjustments we can make to our tables through MATLAB.
+ 
+%% TABTAB41
 
+As we can see we can also leave specific rows or columns unlabeled. If we want to get rid of the table borders
+we just need to set the {\tt tableBorders} to 0.
+
+%% TABTAB42
+
+To reset all the modifications we did to the settings of the table, use the function {\tt setDefault} as shown in the 
+last example.
+
+%% TABTAB5
+
+Now we will demonstrate how to use the MATLAB table to create tables. We can use either the {\tt addTabular} or {\tt addTable}
+function to add the MATLAB table to our document. In the following examples we can see the usage :
+
+%% TABTAB51
+
+Please note that all of the adjustments to the table properties we have done in the previous section are also applicable 
+here, without any restriction. Next we will see the same MATLAB table added to our document throught the {\tt addTable} 
+function which allows us also to add a caption for the table. We can also see the usage of the {\tt transposeTable} setting
+which can also be applied to the former way of adding tables.
 
 
 

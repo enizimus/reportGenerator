@@ -39,7 +39,7 @@ latexOutputColor     :: red
 tablePlacement       :: ht     :: for table
 transposeTable       :: 0
 dataFormatMode       :: column   :: column, row
-dataFormat           :: %i
+dataFormat           :: %.2f
 dataNanString        :: -      :: nan
 tableColumnAlignment :: c ::
 tableBorders         :: 1
