@@ -134,6 +134,33 @@ report.addParagraph('FIGS5');
 
 % MATLAB ---------------------------------------------
 
+report.addHeading('section', 'Pretty output');
+report.addHeading('subsection', 'Listing and Latex');
+report.addParagraph('PRETTY');
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 1, 3);
+report.addText(['If we use want the MATLAB console output we will use the '...
+    'following function and pass the variable names as a cell array of strings']);
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 4, 5);
+report.addText(['If we want the same variables displayed but in latex mode '...
+    'then we will use the following syntax']);
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 6, 7);
+report.addText(['Now with a different collor, standard black is also possible']);
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 8, 12);
+
+report.addHeading('subsection', 'Big matrices');
+report.addParagraph('PRETTY1');
+report.addMatlab('PRETTYBIG', {'listing','eval'}, 0, 1, 4);
+report.addNewPage;
+report.addText('Or if we want it in latex style, this time in black color');
+report.addMatlab('PRETTYBIG', {'listing','eval'}, 0, 5, 8);
+
+report.addHeading('subsection', 'Graphic output for arrays');
+report.addParagraph('PRETTY2');
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 13, 18);
+report.addNewPage;
+report.addParagraph('PRETTY3');
+report.addMatlab('PRETTYFUN',{'eval'}, 0, 19, 20);
+report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 21, 25);
 
 
               

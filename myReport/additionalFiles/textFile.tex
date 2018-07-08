@@ -170,7 +170,31 @@ figures we can also add them in a vertical positioning.
 
 With the above example we demonstrated how to add multiple figures, one per line, with different captions. You can adjust
 the size of the figures by accessing the {\tt imageOption} property and setting the size as in the code above. In this case it
-is important to set the numbe of images per line to one or else it won't place them in the manner above.
+is important to set the numbe of images per line to one or else it won't place them in the manner above. If you don't want 
+to add a caption to a specific figure in the array, just pass an empty string in the right place as in the example above.
+
+%% PRETTY
+
+We can utilyze the {\tt addMatlabOutput} function to display MATLAB console output in our document, it is possible to display
+it as same as in the console or in latex mode. The collor of the latex mode output can be set by accessing the {\tt latexOutputColor}
+property with the {\tt set} function. The following code was used to generate the matrices used in the following examples.
+
+%% PRETTY1
+
+Another example would be wanting to add a matrix whose size is too big to fit into the document in a way that we 
+dont just have a bunch of numbers on the screen, this is easy with the same function as before, lets use the following code
+ 
+
+%% PRETTY2
+In this part we will see how to create images from matrices. We will use the previously created {\tt M1} and {\tt M2}.
+
+%% PRETTY3
+
+To make one black and white image without the colorbar we will execute the following lines of code. Note how we passed the 
+matrices variable names to the function, we enclosed the cell array with an additional pair of curly brackets to get one 
+figure containing both arrays as images.
+
+
 
 
 

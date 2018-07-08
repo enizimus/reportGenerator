@@ -108,7 +108,45 @@ report.addFigure(figh, 'sin(t), log(t), sinc(t)');
 %% FIGFUN4
 report.set('imagePerLine',1);
 report.set('imageOption', 'width=0.8\textwidth');
-report.addFigure(figh, {'sin(t)', 'log(t)', 'sinc(t)'});
+report.addFigure(figh, {'sin(t)', ' ', 'sinc(t)'});
+
+%% PRETTYFUN
+
+M1 = logical(eye(6));
+M2 = flipud(M1);
+
+report.addMatlabOutput({'M1','M2'});
+
+report.addMatlabOutput({'M1','M2'}, true);
+
+report.set('latexOutputColor','blue');
+report.addMatlabOutput({'M1'}, true);
+report.set('latexOutputColor','green');
+report.addMatlabOutput({'M2'}, true);            
+
+report.set('arrayImageColor',1,'arrayColorbar',1);
+imageNames = report.createArrayImage({'M1','M2'});
+report.setDefault('array');
+report.set('imagePerLine', 2, 'imageOption', 'width=0.4\textwidth');
+report.addFigure(imageNames,'Arrays as images');
+
+report.setDefault('image');
+
+report.set('arrayImageColor',0,'arrayColorbar',0);
+imageNames = report.createArrayImage({{'M1','M2'}});
+report.setDefault('array');
+report.addFigure(imageNames,'Arrays as image in bw');
+
+%% PRETTYBIG
+
+bigM = randn(100);
+report.set('prettyMaxSize', '[8,6]');
+report.addMatlabOutput({'bigM'});
+
+report.set('latexOutputColor','black');
+report.addMatlabOutput({'bigM'}, true);
+
+
 
 
 
