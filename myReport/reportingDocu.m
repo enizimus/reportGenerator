@@ -162,10 +162,10 @@ report.addParagraph('PRETTY3');
 report.addMatlab('PRETTYFUN',{'eval'}, 0, 19, 20);
 report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 21, 25);
 
-
-              
-
-
+report.addParagraph('PRETTY4');
+report.addMatlab('PRETTYBIG', {'listing', 'eval'}, 0, 8, 13);
+report.addParagraph('PRETTY5');
+report.addMatlab('FIBOFUN', {'listing', 'eval'});
 
 report.export;
 report.generate;

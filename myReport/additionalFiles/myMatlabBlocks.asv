@@ -154,14 +154,11 @@ report.addFigure(imageNames, 'Random values as image');
 
 %% FIBOFUN
 
-t = 1:25;
-t = reshape(t, [5,5]);
+t = 1:100;
 fib = fibonacci(t);
 
-report.set('arrayImageColor', 1, 'arrayColorbar', 1);
-imageName = report.createArrayImage({'fib'});
-report.setDefault('array');
-report.addFigure(imageName, 'Fibonacci numbers');
+
+imageName = report.createImageArray({'fib'});
 
 
 

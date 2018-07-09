@@ -87,6 +87,12 @@ classdef reportGenerator < handle
         end % setDefault
         
         function fileName = getFileName(obj,type)
+            % getFileName(obj, type)
+            % 
+            % Gets the current name of a file, there are multiple available
+            % files that are presented in the reportingDocu, the file names
+            % can also be edited directly through the used setting file
+            %
             switch type
                 case {'outputFile','output'}
                     fileName = [obj.get('outputFile'),'.',obj.get('outputFormat')];
@@ -114,6 +120,11 @@ classdef reportGenerator < handle
         end % wrapOutCell
         
         function nvar = repeatString(obj, var, num)
+            % repeatString(obj, var, num)
+            %
+            % If the passed var is a cell array of length = 1, then 
+            % it will return the same string repeated num times
+            %
             nvar = cell(1,num);
             if numel(var) == 1
                 nvar(:) = var;

@@ -45,6 +45,12 @@ classdef latexGenerator < reportGenerator
         end % cleanDir
         
         function addNewPage(obj)
+            % addNewPage(obj)
+            %
+            % Ends the current page and starts on a new one, it will
+            % also force the placement of figure functions that were 
+            % execute beforehand.
+            %
             obj.addParagraph('\newpage');
         end
         
@@ -334,13 +340,12 @@ classdef latexGenerator < reportGenerator
              text = [text, cend];
              obj.addParagraph(text);
          end
-         
-         function addTitleLogo(obj)
-             code = ['\vspace*{\dimexpr-1in-\topmargin-\headsep-\headheight-\baselineskip}%'...
-                     '\hspace*{\dimexpr-1in-\evensidemargin-\parindent}%'...
-                     '\makebox[\paperwidth][r]{\includegraphics[height=3 cm]{Infineon.jpg}}'];
-                 
-             obj.addParagraph(code);
+       
+         function addWordLink(obj, word, link)
+             
+             
+             
+             
              
          end
     
