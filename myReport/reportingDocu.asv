@@ -170,10 +170,34 @@ report.setDefault('image', 'table');
 
 % FUNCTIONS ------------------------------------------
 
-report.addHeading('section', '');
+report.addHeading('section', 'Function descriptions');
+report.addParagraph('FUNPART');
+report.addMatlab('FUNFUNC',{'listing', 'eval'});
+%report.addMatlab('MATFUN', {'eval'});
+myfun = 'matFun.m';
+pre = 'The type and description can also be extracted from the MATLAB help output for that function';
+post = 'Just by passing empty strings for {\tt type} and {\tt desc} it will get the data from the help output';
+report.addFunctionDescription(myfun,'','',pre,post);
+
+% EQUATIONS ------------------------------------------
+
+report.addHeading('section', 'Equations');
+report.addParagraph('EQNS');
+report.addMatlab('EQNS', {'listing', 'eval'});
+report.addList('itemize', {report.addEquation('e')});
+
+% EXPORT ---------------------------------------------
+
+report.addHeading('section', 'Generating and viewing');
+report.addParagraph('LASTSTP');
+report.addList('itemize', {'{\tt start [filename]} (Windows)', '{\tt open [filename]} (MAC OS)',...
+    '{\tt xdg-open [filename]} (Linux)'});
+report.addParagraph('LASTSTP2');
+
 
 
 report.export;
 report.generate;
 report.cleanUp;
 report.view;
+close all;

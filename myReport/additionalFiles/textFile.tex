@@ -13,7 +13,8 @@ To set the LaTeX Generator up, you will need the following installed on your pc 
 
 After installing these components, copy the reportGenerator main folder to a secure location
 on your machine and be sure to add it to your MATLABs search path so you can work from
-a different directory and use all the functions without restriction. To be sure that everything
+a different directory and use all the functions without restriction. We have provided a template
+working directory which you can use to see how it all fits together. To be sure that everything
 is set up correctly, we have provided a very simple "hello world" programme that you can run
 and check if it generates a pdf document with "hello world" on one page, in your current working
 directory.
@@ -218,8 +219,16 @@ more than one equation and can also align all of them at the {\tt \&} charakter.
 add an asterix to the option, like in the example. It is also possible to type the latex code directly into a text file and 
 add it with the paragraph function.
 
-%% 
+%% LASTSTP
 
+At the end we have to first export a latex document, then generate an output file from it. That can be done with the {\tt export} and
+{\tt generate} functions. If you want the program to automatically open the file, please set the {\tt outputViewer} parameter
+appropriate so it works with your system.
+
+%% LASTSTP2
+
+The default settings are set up for a machine running Windows but it is fairly easy and quick to change the basic parameters to get it 
+running on other systems.
 
 
 

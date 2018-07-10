@@ -192,6 +192,11 @@ report.addEquation(['\nabla E &= \frac{\rho}{\epsilon_0}\\'...
 	'\nabla \times E &= -\frac{\partial B}{\partial t}\\'...
 	'\nabla \times B &= \mu_0(J+'...
 	'\epsilon_0\frac{\partial E}{\partial t})'],'align*');
+	
+	
+%% LASTSTP
+
+
 
 
 

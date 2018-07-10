@@ -22,7 +22,7 @@ report.addHeading('section', 'Setup');
 % SETUP ---------------------------------------------
 report.addParagraph('SETUP1');
 report.addList('itemize', {'\LaTeX{} distribution for your system',...
-               'Latexmk package','Ruby framework (on windows)'});
+               'Latexmk package','Ruby framework (if the right files dont get installed with Latexmk)'});
 report.addParagraph('SETUP2');
 
 report.addHeading('section', 'How it works');
@@ -184,6 +184,18 @@ report.addFunctionDescription(myfun,'','',pre,post);
 report.addHeading('section', 'Equations');
 report.addParagraph('EQNS');
 report.addMatlab('EQNS', {'listing', 'eval'});
+
+% EXPORT ---------------------------------------------
+
+report.addHeading('section', 'Generating and viewing');
+report.addParagraph('LASTSTP');
+report.addList('itemize', {'{\tt start [filename]} (Windows)', '{\tt open [filename]} (MAC OS)',...
+    '{\tt xdg-open [filename]} (Linux)'});
+report.addParagraph('LASTSTP2');
+
+% DELETING FILES -------------------------------------
+
+report.addParagraph('DELFUN');
 
 
 

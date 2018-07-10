@@ -341,9 +341,22 @@ classdef latexGenerator < reportGenerator
              obj.addParagraph(text);
          end
        
-         function addWordLink(obj, word, link)
-      
+         function zipFiles(obj, nameout)
+             % zipFiles(obj, dir, file)
+             % 
+             % Makes a zip file of the directory you choose and puts it
+             % into your current working directory
              
+             if(nargin < 2 || isempty(nameout))
+                 nameout
+             
+             wkd = pwd;
+             copyfile('additionalFiles', [wkd,'\myReport\additionalFiles']);
+             copyfile('*.m', [wkd, '\myReport']);
+             copyfile('*.pdf', [wkd, '\myReport']);
+             zip('myReportZip','myReport');
+             rmdir 'myReport' s
+         
          end
     
     end

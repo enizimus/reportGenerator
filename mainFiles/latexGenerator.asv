@@ -45,8 +45,11 @@ classdef latexGenerator < reportGenerator
         end % cleanDir
         
         function addNewPage(obj)
-            % ad
+            % addNewPage(obj)
             %
+            % Ends the current page and starts on a new one, it will
+            % also force the placement of figure functions that were 
+            % execute beforehand.
             %
             obj.addParagraph('\newpage');
         end
@@ -311,7 +314,7 @@ classdef latexGenerator < reportGenerator
         %       eqn : string containing equation written in latex code
         %       option : ' ' (empty parameter means standard one line equation) 
         %                'enumerate' (one line equation enumerated)
-        %                'align' (equation will be aligned at '&' sign)
+        %                'align' (equations will be aligned at '&' sign)
         %
         cbeg = '\begin{TEXT}';
         cend = '\end{TEXT}';
@@ -337,13 +340,24 @@ classdef latexGenerator < reportGenerator
              text = [text, cend];
              obj.addParagraph(text);
          end
-         
-         function addTitleLogo(obj)
-             code = ['\vspace*{\dimexpr-1in-\topmargin-\headsep-\headheight-\baselineskip}%'...
-                     '\hspace*{\dimexpr-1in-\evensidemargin-\parindent}%'...
-                     '\makebox[\paperwidth][r]{\includegraphics[height=3 cm]{Infineon.jpg}}'];
-                 
-             obj.addParagraph(code);
+       
+         function zipFiles(obj, nameout)
+             % zipFiles(obj, dir, file)
+             % 
+             % Makes a zip file of the directory you choose and puts it
+             % into your current working directory
+             
+             wkd = pwd;
+             mkdir('myReportZip');
+             cd 'myReport';
+             mkdir('additionalFiles');
+             cd ..
+             copyfile([wkd,'\additionalFiles'], [wkd,'\myReport\additionalFiles']);
+             copyfile({'*.m', '*.pdf'}, [wkd, '\myReport']);
+             zipfile('myReport','');
+             
+        
+             
              
          end
     
