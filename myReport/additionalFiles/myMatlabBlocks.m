@@ -152,18 +152,46 @@ imageNames = report.createArrayImage({'bigM'});
 report.setDefault('array');
 report.addFigure(imageNames, 'Random values as image');
 
-%% FIBOFUN
+%% MAGICFUN
 
-t = 1:25;
-t = reshape(t, [5,5]);
-fib = fibonacci(t);
+M3 = magic(20);
 
 report.set('arrayImageColor', 1, 'arrayColorbar', 1);
-imageName = report.createArrayImage({'fib'});
-report.setDefault('array');
-report.addFigure(imageName, 'Fibonacci numbers');
+magicM = report.createArrayImage({'M3'});
+report.set('imageOption', 'width=0.8\textwidth');
 
+report.addFigure(magicM, 'Magic matrix 20x20');
 
+%% FUNFUNC
+
+myfun = 'exampleFunction.m';
+pre = 'This part of the text comes before the table';
+typ = {'logical','double','double','string','double'};
+desc = {
+    '1-D array', ...
+    '2-D array', ...
+    'scalar', ...
+    '1-D array' ...
+	'scalar'
+    };
+post = ['this text will be displayed after '...
+					'the function description'];
+report.addFunctionDescription(myfun,typ,desc,pre,post);
+
+%% MATFUN
+
+myfun = 'matFun.m';
+pre = 'The type and description can also be extracted from the MATLAB help output for that function';
+post = 'Just by passing empty strings for {\tt type} and {\tt desc} it will get the data from the help output';
+report.addFunctionDescription(myfun,'','',pre,post);
+
+%% EQNS
+
+report.addEquation(['\nabla E &= \frac{\rho}{\epsilon_0}\\'...
+	'\nabla B &= 0\\'...
+	'\nabla \times E &= -\frac{\partial B}{\partial t}\\'...
+	'\nabla \times B &= \mu_0(J+'...
+	'\epsilon_0\frac{\partial E}{\partial t})'],'align*');
 
 
 

@@ -165,9 +165,30 @@ report.addMatlab('PRETTYFUN',{'listing', 'eval'}, 0, 21, 25);
 report.addParagraph('PRETTY4');
 report.addMatlab('PRETTYBIG', {'listing', 'eval'}, 0, 8, 13);
 report.addParagraph('PRETTY5');
-report.addMatlab('FIBOFUN', {'listing', 'eval'});
+report.addMatlab('MAGICFUN', {'listing', 'eval'});
+report.setDefault('image', 'table');
+
+% FUNCTIONS ------------------------------------------
+
+report.addHeading('section', 'Function descriptions');
+report.addParagraph('FUNPART');
+report.addMatlab('FUNFUNC',{'listing', 'eval'});
+%report.addMatlab('MATFUN', {'eval'});
+myfun = 'matFun.m';
+pre = 'The type and description can also be extracted from the MATLAB help output for that function';
+post = 'Just by passing empty strings for {\tt type} and {\tt desc} it will get the data from the help output';
+report.addFunctionDescription(myfun,'','',pre,post);
+
+% EQUATIONS ------------------------------------------
+
+report.addHeading('section', 'Equations');
+report.addParagraph('EQNS');
+report.addMatlab('EQNS', {'listing', 'eval'});
+
+
 
 report.export;
 report.generate;
 report.cleanUp;
 report.view;
+close all;

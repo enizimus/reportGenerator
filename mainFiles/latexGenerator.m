@@ -314,7 +314,7 @@ classdef latexGenerator < reportGenerator
         %       eqn : string containing equation written in latex code
         %       option : ' ' (empty parameter means standard one line equation) 
         %                'enumerate' (one line equation enumerated)
-        %                'align' (equation will be aligned at '&' sign)
+        %                'align' (equations will be aligned at '&' sign)
         %
         cbeg = '\begin{TEXT}';
         cend = '\end{TEXT}';
@@ -342,10 +342,7 @@ classdef latexGenerator < reportGenerator
          end
        
          function addWordLink(obj, word, link)
-             
-             
-             
-             
+      
              
          end
     

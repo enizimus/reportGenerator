@@ -1,0 +1,1 @@
+function [out1, out2] = exampleFunction(in1, in2, in3)
