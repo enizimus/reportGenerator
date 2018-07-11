@@ -713,9 +713,7 @@ classdef reportGenerator < handle
             %obj.dispLatexCode([{['% Function']},{'%'},text])
 
         end    
-        
-               
-        
+   
         addTitlePage
         addHeading
         addList

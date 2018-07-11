@@ -2,6 +2,8 @@ outputGenerator      :: latexmk -pdf -f -pdflatex="pdflatex -interaction=nonstop
 outputViewer         :: start reportingDocu.pdf
 outputFile           :: reportingDocu
 outputFormat         :: tex
+zipExtension         :: .zip 
+zipOutputName		 :: myReportZipped
 mediaDir             :: MediaFiles
 mediaFormat          :: png
 mediaPrefix          :: picture_
@@ -47,3 +49,4 @@ booktabs             :: 0
 centerTabular        :: 1
 tableColLabels       :: 
 tableRowLabels       :: 
+equationNewLine	     :: \\

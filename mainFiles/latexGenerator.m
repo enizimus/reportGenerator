@@ -19,28 +19,26 @@ classdef latexGenerator < reportGenerator
             obj.runMatlabInit;
         end % latexGenerator
         
-        function cleanDir(obj)
+        function cleanDir(obj, options)
             % cleanDir 
             %
             % cleans the working directory from old files
-            extList = {'aux','fls','db_latexmk','idx','ilg','ind','log','out'};
+            delDoc = 0;
+            if(nargin < 2 || isempty(options)) 
+                delDoc = 1;
+                extList = {'aux','fls','db_latexmk','idx','ilg','ind','log','out'};
+            else
+                extList = {'aux','fls','db_latexmk','idx','ilg','ind','log',...
+                        'out','gz','fdb_latexmk','tex','toc'};
+                options = obj.wrapInCell(options);
+                extList(ismember(extList, options)) = [];
+            end
             for k = 1:numel(extList)
                 ext = extList{k};
                 delete(['*.',ext])
             end
+            if(delDoc)
             delete(obj.getFileName('report'))
-        end % cleanDir
-        
-        function cleanUp(obj)
-            % cleanUp
-            %
-            % cleans the working directory from all files except the .pdf
-            
-            extList = {'aux','fls','db_latexmk','idx','ilg','ind','log',...
-                        'out','gz','fdb_latexmk','tex','toc'};
-            for k = 1:numel(extList)
-                ext = extList{k};
-                delete(['*.',ext])
             end
         end % cleanDir
         
@@ -344,17 +342,35 @@ classdef latexGenerator < reportGenerator
          function zipFiles(obj, nameout)
              % zipFiles(obj, dir, file)
              % 
-             % Makes a zip file of the directory you choose and puts it
-             % into your current working directory
-             
+             % Makes a zip file of the main files from your current project
+             % including the additionalFiles folder
+             % 
+             index = 1;
+             extList = {'m', 'pdf', 'tex'};
+             zipExt = obj.get('zipExtension');
              if(nargin < 2 || isempty(nameout))
-                 nameout
+                 nameout = obj.get('zipOutputName');
+             end
+             
+             nameNotSet = true;
+             while nameNotSet
+                if exist([nameout,'_', num2str(index), zipExt], 'file') == 2
+                    index = index + 1;
+                else
+                    nameNotSet = false;
+                    nameout = [nameout,'_', num2str(index)];
+                end
+             end
              
              wkd = pwd;
              copyfile('additionalFiles', [wkd,'\myReport\additionalFiles']);
-             copyfile('*.m', [wkd, '\myReport']);
-             copyfile('*.pdf', [wkd, '\myReport']);
-             zip('myReportZip','myReport');
+             
+             for i = 1:numel(extList)
+                 ext = obj.wrapOutCell(extList(i));
+                 copyfile(['*.',ext], [wkd, '\myReport']);
+             end
+     
+             zip(nameout,'myReport');
              rmdir 'myReport' s
          
          end

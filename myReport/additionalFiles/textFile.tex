@@ -5,6 +5,7 @@ kind with the data from MATLAB, so it bridges the way and saves you the time to 
 values and make pretty tables and plots through an additional LaTeX editor. Please follow the
 upcoming instructions to get it up and running.
 
+
 %% SETUP1
 
 To set the LaTeX Generator up, you will need the following installed on your pc :
@@ -62,6 +63,14 @@ Note that the constructor function also takes in parameters with which we could 
 change the name of the settings file we are using, this can be very useful if we have a settings file with 
 settings that fit our current needs but we might use a different settings file usually.
 
+%% DELETEFILES
+
+Before generating a new document it is recommended to clean the working directory of old files to avoid 
+any conflicts. The {\tt cleanDir} functions provides us with that possibility as we will see in the 
+following example. Because the generation process creates a lot of files that are mostly unused, 
+the function can also be used to delete all files execpt the generated document and/or files 
+specifyed within the options parameter. There also exists a function for cleaning the media folder {\tt cleanMediaDir}.
+
 
 %% SETGET1
 
@@ -72,7 +81,9 @@ to change the name the program gives to the graphics it saves, we could use the 
 %% SETGET2
 
 With this piece of code we set the name prefix of the plots that are being saved to 'plot\_'. 
-It can be utilyzed to set and get, with the get function, all of the parameters in {\tt setting.dat}.
+It can be utilyzed to set and get, with the get function, all of the parameters in {\tt setting.dat}. For example, it
+is possible to set the {\tt dispLatexCode} to 1 and all of the generated latex code after setting it will be shown in 
+the MATLAB command window, by default it is turned off (set to 0).
 
 %% TITLETOC
 
@@ -211,12 +222,17 @@ To get a good overview of what parameters a function takes in and which it retur
 and a short description can be nicely structured as a table which holds all of that information. You can use the following 
 methods to showcase a function more clearly. 
 
+%% FUNPART2
+
+That will work only if the description of the function is in a specified format. Next we will see the structure of the description 
+that was typed into the function definition.  
+
 %% EQNS
 
 There is also the possibility to add equations in latex syntax, like in the following examples. You can choose between the 
 usual latex equation environments, if you want just one equation pass {\tt 'equation'} as option, {\tt 'align'} can display
 more than one equation and can also align all of them at the {\tt \&} charakter. If you dont want to enumerate your equations, please
-add an asterix to the option, like in the example. It is also possible to type the latex code directly into a text file and 
+add an asterix to the option ({\tt align*}). It is also possible to type the latex code directly into a text file and 
 add it with the paragraph function.
 
 %% LASTSTP
@@ -228,7 +244,13 @@ appropriate so it works with your system.
 %% LASTSTP2
 
 The default settings are set up for a machine running Windows but it is fairly easy and quick to change the basic parameters to get it 
-running on other systems.
+running on other systems. All of the files used to generate this documentation are available in the {\tt reportingDocu} folder, the main
+matlab file is {\tt reportingDocu.m}.
+
+%% ZIPPING
+
+Executing this function will create a zip file containing all of the relevant project data in your current working directory. You can 
+specify the name of the zip file that is to be made if not, a generic name will be used.
 
 
 

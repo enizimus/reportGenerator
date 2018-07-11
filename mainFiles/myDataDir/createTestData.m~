@@ -1,4 +1,0 @@
-n = 5;
-
-x = linspace(-pi,pi,
-for k = 1:n
