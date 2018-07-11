@@ -229,8 +229,6 @@ report.addText('-{\tt myMatlabBlocks.m : }is a .m file which holds MATLAB code t
 report.addText('-{\tt myMatlabInit.m : }MATLAB init file, gets executed at the start, you can specify project dependant settings like the style of MATLAB figures');
 report.addText('-{\tt startup.m : }MATLAB startup file, needs to have the path to latexmk replaced with the path on your machine, it is needed to add this path to the MATLAB search path it is not neccessary to use this file for that');
 
-
-
 report.export;
 report.generate;
 report.cleanDir({'pdf'});
